@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} Survey {% endblock %}
+
+{% block content %} 
+    {{survey.title}} <br>
+    {{survey.instructions}} <br>
+    <a href="/questions/0">
+        <button href="/questions/0">Start</button>
+    </a>
+{% endblock %}

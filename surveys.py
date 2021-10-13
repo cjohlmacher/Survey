@@ -15,16 +15,18 @@ class Question:
 class Survey:
     """Questionnaire."""
 
-    def __init__(self, title, instructions, questions):
+    def __init__(self, title, slug, instructions, questions):
         """Create questionnaire."""
 
         self.title = title
+        self.slug = slug
         self.instructions = instructions
         self.questions = questions
 
 
 satisfaction_survey = Survey(
     "Customer Satisfaction Survey",
+    "satisfaction",
     "Please fill out a survey about your experience with us.",
     [
         Question("Have you shopped here before?"),
@@ -36,6 +38,7 @@ satisfaction_survey = Survey(
 
 personality_quiz = Survey(
     "Rithm Personality Test",
+    "personality",
     "Learn more about yourself with our personality quiz!",
     [
         Question("Do you ever dream about code?"),
@@ -49,6 +52,6 @@ personality_quiz = Survey(
 )
 
 surveys = {
-    "satisfaction": satisfaction_survey,
-    "personality": personality_quiz,
+    'satisfaction': satisfaction_survey,
+    'personality': personality_quiz,
 }

@@ -3,11 +3,14 @@
 {% block title %} Survey {% endblock %}
 
 {% block content %} 
-    {{survey.title}} <br>
-    {{survey.instructions}} <br>
-    <a href="/questions/0">
-        <button href="/questions/0">Start</button>
-    </a>
+    <h1>Please choose a survey to complete: </h1>
+    <form method="POST", action="/select">
+        {% for survey in surveys.values() %}
+            <input type=radio name="options" id={{survey.title}} value={{survey.slug}}/>
+            <label for={{survey.title}}>{{survey.title}}</label>
+        {% endfor %}
+        <button>Submit</button>
+    </form>
 {% endblock %}
 
 

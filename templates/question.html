@@ -3,12 +3,14 @@
 {% block title %} Question {% endblock %}
 
 {% block content %} 
-    <form method="POST" action="/answers/{{id}}">
-    <label for={{question}}>{{question.question}}</label>
-    {% for choice in question.choices %}
-        <input type=radio name="options" id={{choice}} value={{loop.index-1}}/>
-        <label for={{choice}}>{{choice}}</label>
-    {% endfor %}
+    <form method="POST" action="/answers/{{id}}" class="question">
+        <label for={{question}}>{{question.question}}</label>
+        {% for choice in question.choices %}
+            <div class="option">
+                <input type=radio name="options" id={{choice}} value={{loop.index-1}}/>
+                <label for={{choice}}>{{choice}}</label>
+            </div>
+        {% endfor %}
     <button>Next</button>
 </form>
 {% endblock %}
