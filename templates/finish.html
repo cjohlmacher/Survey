@@ -4,5 +4,15 @@
 
 {% block content %} 
     <h1>Thank you for taking time to fill out our survey!</h1>
-    {{responses}}
+    <div class="summary">
+        {% for question in surveys[survey].questions %}
+            <div class="response">
+                <span class="lead">{{question.question}}</span>
+                {{responses[loop.index-1]['response']}}
+                {% if responses[loop.index-1]['comment'] %}
+                    -<i> {{responses[loop.index-1]['comment']}} </i>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

@@ -51,7 +51,20 @@ personality_quiz = Survey(
     ]
 )
 
+television_quiz = Survey(
+    "Television Preferences Survey",
+    "television",
+    "Please tell us about your television preferences",
+    [
+        Question("Have you watched television before?"),
+        Question("Do you enjoy television shows that have talking animals?"),
+        Question("Which of these television shows do you find most appealing?",["The Office","The Great British Bake Off","It's Always Sunny in Philadelphia","Law & Order: SVU"]),
+        Question("Would you enjoy a show about penguins, and what should their names be?",["Yes","Of course!"],allow_text=True)
+    ]
+)
+
 surveys = {
     'satisfaction': satisfaction_survey,
     'personality': personality_quiz,
+    'television': television_quiz,
 }

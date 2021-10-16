@@ -6,8 +6,10 @@
     <h1>Please choose a survey to complete: </h1>
     <form method="POST", action="/select">
         {% for survey in surveys.values() %}
-            <input type=radio name="options" id={{survey.title}} value={{survey.slug}}/>
-            <label for={{survey.title}}>{{survey.title}}</label>
+            <div class="option">
+                <input type=radio name="options" id={{survey.title}} value={{survey.slug}} />
+                <label for={{survey.title}}>{{survey.title}}</label>
+            </div>
         {% endfor %}
         <button>Submit</button>
     </form>

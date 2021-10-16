@@ -1,5 +1,7 @@
 body {
     margin: 5px;
+    margin-top: 10px;
+    max-width: 90vw;
     background-color: orange;
     color: black;
     display: flex;
@@ -7,6 +9,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .question {
@@ -19,6 +22,7 @@ body {
 .option {
     display: flex;
     flex-direction: row;
+    margin: 3px;
 }
 
 input {
@@ -29,3 +33,24 @@ input {
     align-items: center;
     justify-content: center;
 }
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.response {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.response .lead {
+    font-weight: bold;
+    margin-right: 5px;
+}   

@@ -7,10 +7,13 @@
         <label for={{question}}>{{question.question}}</label>
         {% for choice in question.choices %}
             <div class="option">
-                <input type=radio name="options" id={{choice}} value={{loop.index-1}}/>
+                <input type=radio name="options" id={{choice}} value={{loop.index-1}} />
                 <label for={{choice}}>{{choice}}</label>
             </div>
         {% endfor %}
+        {% if question.allow_text == True %}
+            <input type=text name="comment" id="comment" placeholder="Provide comments here"/>
+        {% endif %}
     <button>Next</button>
 </form>
 {% endblock %}
